@@ -14,7 +14,7 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 - 地面为很暗的粗糙哑光材质，仅有微弱接触阴影和少量纹理。避免湿地、镜面倒影、亮斑、彩色反射和明显光池。
 - 用克制的柔光和局部轮廓反射表现体积，不展示灯具、光柱或明显聚光灯。黑暗环境下仍需看清主要装备结构。
 - 默认无环境彩色粒子云；可留零至三个极暗微粒。装备自带宝石、符文或火环按原设保留，控制泛光和环境溢色。
-- 自然有重量的站姿：轻微转肩、重心转移、适度不对称，发丝或布摆有轻微运动。无需每个职业都抬手施法。
+- 正面棚拍姿态：角色默认正视镜头，面部（或面罩开口）、胸廓和骨盆整体朝向镜头；若眼睛可见，视线自然落向镜头。可以基于参考图调整重心、肩高、膝踝和手臂，保留轻微不对称、重量感以及发丝或布摆的细小运动，但不做明显侧身、回头或低头。
 - 同系列默认省略手持武器，双手空置；用户要求保留时遵从。肩部刀刃装饰、背部尖刺和其他套装部件不是手持武器。
 - 目标是 UE5/PBR 风格的生成图；除非实际在引擎中制作，不声称使用 UE5 完成了渲染，也不声称交付了材质贴图或三维模型。
 
@@ -61,7 +61,7 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 
 首轮提示词先交代画幅与远景构图，再写角色身份、套装、逐部件材质、姿态和暗环境。参考下面的紧凑骨架，根据实际角色填写，避免带入上一个角色的装备：
 
-> 3:4 vertical full-body character showcase, camera pulled back and framed to match the composition master. The complete silhouette including signature headgear should reach approximately from y=13.5% to y=87.8% of the canvas, about 74% of image height, with all extremities visible and balanced upper/lower whitespace. [Reference image roles.] Faithfully translate [visible character and transmog] into cinematic physically plausible materials. [Explicit metal / textile / leather / bone assignments and distinct light responses.] [Natural species-appropriate pose.] Near-black subdued haze; very dark matte ground with faint contact shadow. Restrained intrinsic equipment glow, minimal bloom, almost no environmental particles. [Requested weapon treatment.] No screenshot UI, border, captions, or added branding.
+> 3:4 vertical full-body character showcase, camera pulled back and framed to match the composition master. The complete silhouette including signature headgear should reach approximately from y=13.5% to y=87.8% of the canvas, about 74% of image height, with all extremities visible and balanced upper/lower whitespace. [Reference image roles.] Faithfully translate [visible character and transmog] into cinematic physically plausible materials. [Explicit metal / textile / leather / bone assignments and distinct light responses.] Front-facing studio pose: face or mask opening, chest and hips oriented toward the camera, eyes meeting the lens when visible; allow only natural weight shift and slight asymmetry from the reference, without a pronounced profile or looking away. Near-black subdued haze; very dark matte ground with faint contact shadow. Restrained intrinsic equipment glow, minimal bloom, almost no environmental particles. [Requested weapon treatment.] No screenshot UI, border, captions, or added branding.
 
 编辑现有成图时明确“只修改什么”和应保留的身份、装备、姿态、位置、画幅和光效。按用户指出的问题局部修订：
 
@@ -80,7 +80,7 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 1. **比例与留白**：先将候选图与 `references/composition-master.png` 叠加，比较最高身份性装饰、脚底接触线、中心位置和上下左右留白；不再把 65% 作为本系列默认硬目标。母版约为 74% 高度（y≈13.5%–87.8%），以实际视觉叠加为准。没有母版可用时，才估计或测量 `r=(y_bottom-y_top)/image_height`，并说明边界。
 2. **构图**：完整头饰、肩饰与脚底都在画布内，留白合理。比例含头饰，不以头顶皮肤代替鹿角或火环顶端。
 3. **幻化**：种族、主要部件、露肤、鞋型和配色忠于参考；武器处理符合请求。
-4. **姿态**：手部完整、关节连贯，站姿有重心，脚与地面接触可信。
+4. **姿态**：默认正面面对镜头；面部/面罩开口、胸廓和骨盆朝向镜头，若眼睛可见则自然看向镜头。允许根据参考图调整重心、肩高、膝踝和手臂，但不出现明显侧身、回头或低头；手部完整、关节连贯，脚与地面接触可信。
 5. **材质**：正常展示尺度下可分辨金属、布料与皮革；不能只有颜色区分。纹理细节需符合部件尺度和用途。
 6. **氛围**：背景暗、地面哑光、不出现强倒影，光效克制，人物主结构可读。
 
