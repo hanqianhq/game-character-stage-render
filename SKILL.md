@@ -36,9 +36,9 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 
 `references/composition-master.png` 是本系列的固定构图参考。使用它时，把当前角色外观图用于种族、体态、脸部和装备，把母版只用于画幅、相机距离、人物占比、中心位置、脚底接触线和留白。不同种族、翅膀或大型头饰的轮廓不需要与母版逐像素重合，也不能为贴合轮廓拉伸角色身体。
 
-每次生成后都要把候选图与母版统一为 3:4 画布并叠加查看（可用约 50% 透明度）。至少检查：最高身份性装饰的 y 位置、脚底/地面接触线、人物视觉中心、左右留白和整体轮廓宽度。以上下边界各约 ±2% 画布高度、中心位置约 ±1.5% 为建议容差；翅膀、肩饰等造成的宽度差异按视觉平衡判断。未通过时只调整取景、缩放或垂直位置，不重设计装备和身份。
+每次生成后都要把候选图与母版统一为 3:4 画布，先对齐画布四角，再以约 50% 透明度叠加查看。底部留白是硬锚点：母版最低人物点约为像素 y=1272，画布底部到该点约 176px（约 12.2% 高度）；候选图的脚底或衣摆最低点必须与这条基线保持相同高度，不能只比较总人物高度。随后检查最高身份性装饰的 y 位置、人物视觉中心、左右留白和整体轮廓宽度。以上下边界各约 ±1.5% 画布高度、底部留白约 ±1.5% 画布高度、中心位置约 ±1.5% 为建议容差；翅膀、肩饰等造成的宽度差异按视觉平衡判断。未通过时先调整相机距离/缩放使底部留白匹配，再调整垂直位置；不重设计装备和身份。
 
-母版是构图基准，不是“写进提示词就算达标”的声明。必须以实际叠加结果作为验收依据；无法精确分割时应标注为约值。
+母版是构图基准，不是“写进提示词就算达标”的声明。必须以实际叠加结果作为验收依据；底部留白未对齐时不得宣称构图通过；无法精确分割时应标注为约值。
 
 ## 材质分工：解决塑料挂件感
 
@@ -61,7 +61,7 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 
 首轮提示词先交代画幅与远景构图，再写角色身份、套装、逐部件材质、姿态和暗环境。参考下面的紧凑骨架，根据实际角色填写，避免带入上一个角色的装备：
 
-> 3:4 vertical full-body character showcase, camera pulled back and framed to match the composition master. The complete silhouette including signature headgear should reach approximately from y=13.5% to y=87.8% of the canvas, about 74% of image height, with all extremities visible and balanced upper/lower whitespace. [Reference image roles.] Faithfully translate [visible character and transmog] into cinematic physically plausible materials. [Explicit metal / textile / leather / bone assignments and distinct light responses.] Front-facing studio pose: face or mask opening, chest and hips oriented toward the camera, eyes meeting the lens when visible; allow only natural weight shift and slight asymmetry from the reference, without a pronounced profile or looking away. Near-black subdued haze; very dark matte ground with faint contact shadow. Restrained intrinsic equipment glow, minimal bloom, almost no environmental particles. [Requested weapon treatment.] No screenshot UI, border, captions, or added branding.
+> 3:4 vertical full-body character showcase, camera pulled back and framed to match the composition master. Match the composition master by aligning the lowest foot/robe point to approximately y=87.8% of the canvas so the bottom whitespace is the same height as the master, then frame the complete silhouette with the highest identity element around y=13.5% (about 74% total height) and all extremities visible. [Reference image roles.] Faithfully translate [visible character and transmog] into cinematic physically plausible materials. [Explicit metal / textile / leather / bone assignments and distinct light responses.] Front-facing studio pose: face or mask opening, chest and hips oriented toward the camera, eyes meeting the lens when visible; allow only natural weight shift and slight asymmetry from the reference, without a pronounced profile or looking away. Near-black subdued haze; very dark matte ground with faint contact shadow. Restrained intrinsic equipment glow, minimal bloom, almost no environmental particles. [Requested weapon treatment.] No screenshot UI, border, captions, or added branding.
 
 编辑现有成图时明确“只修改什么”和应保留的身份、装备、姿态、位置、画幅和光效。按用户指出的问题局部修订：
 
@@ -77,7 +77,7 @@ description: 将魔兽世界角色截图或幻化参考图制作成暗黑写实�
 
 每轮看实际图再判断，提示词提出的要求不等于已实现。
 
-1. **比例与留白**：先将候选图与 `references/composition-master.png` 叠加，比较最高身份性装饰、脚底接触线、中心位置和上下左右留白；不再把 65% 作为本系列默认硬目标。母版约为 74% 高度（y≈13.5%–87.8%），以实际视觉叠加为准。没有母版可用时，才估计或测量 `r=(y_bottom-y_top)/image_height`，并说明边界。
+1. **比例与留白**：先将候选图与 `references/composition-master.png` 对齐画布四角并叠加，先锁定底部留白：母版最低人物点约 y=1272，底部留白约 176px（12.2% 高度），候选图必须与之对齐，再检查最高身份性装饰、中心位置和左右留白；不再把 65% 作为本系列默认硬目标。母版整体约为 74% 高度（y≈13.5%–87.8%），以实际叠加为准。没有母版可用时，才估计或测量 `r=(y_bottom-y_top)/image_height`，并说明边界。
 2. **构图**：完整头饰、肩饰与脚底都在画布内，留白合理。比例含头饰，不以头顶皮肤代替鹿角或火环顶端。
 3. **幻化**：种族、主要部件、露肤、鞋型和配色忠于参考；武器处理符合请求。
 4. **姿态**：默认正面面对镜头；面部/面罩开口、胸廓和骨盆朝向镜头，若眼睛可见则自然看向镜头。允许根据参考图调整重心、肩高、膝踝和手臂，但不出现明显侧身、回头或低头；手部完整、关节连贯，脚与地面接触可信。
