@@ -1,4 +1,4 @@
 interface:
-  display_name: "魔兽幻化写实渲染"
-  short_description: "暗黑角色展示：按构图母版约74%占比、哑光地面、克制光效与清晰材质区分"
-  default_prompt: "使用 $wow-transmog-render，根据我提供的魔兽幻化截图制作同系列暗黑写实角色展示图。"
+  display_name: "Game Character Stage Render"
+  short_description: "Refined 3:4 dark-stage game character renders"
+  default_prompt: "Use $game-character-stage-render to turn this game character reference into a refined 3:4 dark-stage showcase render."
