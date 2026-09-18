@@ -1,5 +1,5 @@
 ---
-name: wow-transmog-render
+name: game-character-stage-render
 description: 将魔兽世界角色截图、幻化参考图或角色渲染图转译为 3:4 暗黑舞台写实展示图。保留身份与装备设计，同时重建布料、皮革、金属、骨骼等材质的体积、结构与光照；亡灵默认使用弯腰驼背姿态。
 ---
 

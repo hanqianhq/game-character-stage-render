@@ -1,4 +1,4 @@
 interface:
   display_name: "Game Character Stage Render"
-  short_description: "Refined 3:4 dark-stage game character renders"
+  short_description: "3:4 dark-stage cinematic renders with physically distinct materials"
   default_prompt: "Use $game-character-stage-render to turn this game character reference into a refined 3:4 dark-stage showcase render."
