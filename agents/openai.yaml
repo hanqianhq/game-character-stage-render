@@ -1,4 +1,4 @@
 interface:
   display_name: "Game Character Stage Render"
-  short_description: "3:4 dark-stage cinematic renders with physically distinct materials"
-  default_prompt: "Use $game-character-stage-render to turn this game character reference into a refined 3:4 dark-stage showcase render."
+  short_description: "Routes anime, concept-art and game references into semi-realistic 3D, asset reconstruction or Unreal Engine renders"
+  default_prompt: "Use $game-character-stage-render. First classify the reference as stylized/anime, concept art, or realistic game/3D reference; then choose the appropriate semi-realistic 3D, production-ready 3D asset reconstruction, or AAA Unreal Engine finish. Preserve identity, equipment and the requested composition."
