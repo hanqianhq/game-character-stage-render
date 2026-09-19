@@ -5,7 +5,7 @@ description: 将二次元角色、概念原画、游戏截图或角色渲染图�
 
 # Game Character Stage Render
 
-Create a premium full-body 3:4 character showcase in an abstract dark studio void. Preserve identity and equipment while rebuilding volume, materials and illumination. The house presentation is visually centered, with roughly balanced space on all four sides, no apparent light source anywhere in the frame, and no ground reflections.
+Create a premium full-body 3:4 character showcase in an abstract dark studio void. Preserve identity and equipment while rebuilding volume, materials and illumination. The house presentation is visually centered, with roughly balanced space on all four sides. The lighting must be physically readable on the character and environment, while every lamp, beam, hotspot and source origin remains outside the frame; source-less does not mean flatly lit. The floor is always fully matte and non-reflective.
 
 ## Choose the reconstruction level
 
@@ -84,10 +84,23 @@ On the 1086×1448 example, visually estimated bounds are approximately `x=265–
 
 - Use a near-black charcoal/navy abstract void and continuous dark floor or shallow integrated plane. “展示台” does not imply a raised circular pedestal. Add a plinth only when requested.
 - **No apparent light source anywhere in the image.** No lamps, sun, windows, luminous panels, bright corners, halos, background hotspots, spotlight cones, god rays or beam origins. This applies to the entire frame, not only above the head.
-- Model volume with a broad soft off-frame key, preferably oblique to the visible surfaces, restrained ambient fill and subtle edge separation. Cool-neutral is the default. The key must create readable form gradients, fold shadows and selective material highlights; do not fill away all depth with uniform frontal illumination. “Source-less” means no visible lamp, beam or background source, not the absence of directional modeling or reflections on the character. Soft studio reflections on metal are allowed without showing the lighting equipment. Avoid rims or directional smoke that reveal an obvious spotlight position.
-- **Floor must be fully matte and non-reflective in appearance.** No faint boot reflection, mirrored silhouette, glossy sheen, wet pavement, puddle, polished stage or bright specular floor pool. Ground feet using soft contact shadows and ambient occlusion only. Keep floor texture subordinate; avoid highlights that read as wetness. Character metal, eyes and other materials retain appropriate specular response; the floor restriction does not flatten every material.
-- Use thin softly modeled ground smoke, sparse dust and a few dim particles if helpful. Avoid dense fog, beam-lit smoke, storm-like particles and obscured silhouettes. Particles must not illuminate the scene or resemble conspicuous practical lights. Preserve essential emissive character gear as a restrained identity accent without introducing a stage light or ground reflection.
+- Model volume with a broad soft off-frame key, preferably oblique to the visible surfaces, restrained ambient fill and subtle edge separation. Cool-neutral is the default. The key must create readable form gradients, fold shadows, occlusion in overlaps and selective material highlights; do not fill away all depth with uniform frontal illumination. “Source-less” means no visible lamp, beam or background source, not the absence of directional modeling, cast shadows or reflections on the character. Soft studio reflections on metal, glass and coated materials are allowed without showing lighting equipment. Add subtle bounce light from nearby costume/material colors and contact darkening where forms meet. Avoid rims or directional smoke that reveal an obvious spotlight position.
+- **Floor must be fully matte and non-reflective in appearance.** No faint boot reflection, mirrored silhouette, glossy sheen, wet pavement, puddle, polished stage, floor glints or bright specular pool. Ground feet and equipment using soft contact shadows, ambient occlusion and a very restrained diffuse bounce only; never use a reflected silhouette to ground the subject. Keep floor texture subordinate and rough; avoid highlights that read as wetness. Character metal, eyes and other materials retain appropriate specular response; the floor restriction does not flatten every material.
+- Use thin softly modeled ground smoke only by default. Do not add floating dust, muddy specks, glowing motes or decorative particles unless the user explicitly requests them. Avoid dense fog, beam-lit smoke and obscured silhouettes. Preserve essential emissive character gear as a restrained identity accent without introducing a stage light or ground reflection.
 - No architecture, banners, candles, rocks or scenery unless requested. No text, logos, watermark, UI or extra character.
+
+## Lighting integration acceptance check
+
+Before accepting a render, verify that the subject is optically embedded in the stage rather than pasted over it:
+
+- broad form gradients describe the face, armor, cloth and equipment volumes;
+- overlapping parts create local occlusion and believable self-shadowing;
+- feet, weapon ends and supports have soft contact shadows anchored to the matte floor;
+- nearby floor and backdrop receive only restrained diffuse bounce, never a mirrored or glossy reflection;
+- material responses differ by region: metal has controlled directional reflections, leather and cloth have broader subdued highlights, skin/hair remain appropriately soft;
+- the image contains no visible lamp, beam, hotspot, halo or reflection pool that reveals a light source.
+
+If the character looks like a cutout, first repair lighting integration, occlusion and grounding; do not solve it by adding a visible key light, a shiny floor, extra fog or random texture noise.
 
 ## Pose and material construction
 
@@ -153,9 +166,9 @@ Scene: near-black charcoal/navy abstract void, continuous completely matte non-r
 Identity: preserve face, hair, ears/tail, expression, costume design/colors and essential gear; discard baked game shading, texture-drawn folds and low-poly surface artifacts, reconstruct plausible local geometry without redesign
 Framing: explicit user size or unchanged-composition instruction first; otherwise current approved reference, then Ellen house standard: about 64–65% height, top≈19% H and bottom≈83.5% H, body near horizontal center, visual weight balanced across full silhouette; side gaps≈15–17% W for comparably broad gear, naturally wider for narrow figures; preserve generous breathing room without enforcing equal margins; complete appendages, moderate long lens, no anatomy distortion
 Pose: relaxed ready stance, slight weight shift, natural asymmetry, readable equipment; undead → visibly bent waist and curved upper back, forward-rolled shoulders, sunken chest, head projecting forward/down, naturally hanging arms; no upright heroic posture
-Illumination: broad soft oblique off-frame key with restrained fill, clear form gradients/fold shadows and selective material reflections; sources invisible, no background hotspots, cones, beams or halos; nonreflective rule applies to floor, not character metal
+Illumination: physically readable broad soft oblique off-frame key with restrained ambient fill, bounce light, overlap occlusion, contact shadows and clear form gradients/fold shadows; all sources invisible, with no background hotspots, cones, beams or halos; character materials may reflect selectively, but the floor remains completely matte and non-reflective
 Materials: explicitly map dominant costume regions; macro volume before microtexture; cloth has weighted rounded folds, self-shadowing and layer gaps, patterns follow drape; leather has thickness, tension and compression; plate has curved shells, bevels/overlaps and coherent metal reflections with localized wear; differentiate bare metal from coated inserts; soft skin and strand hair appropriate to selected finish
-Atmosphere: thin softly modeled ground smoke, sparse dim particles, no beam-lit fog
+Atmosphere: thin softly modeled ground smoke only by default; no floating dust, muddy specks, glowing motes or decorative particles unless explicitly requested; no beam-lit fog
 Grounding: soft contact shadows/ambient occlusion only; absolutely no boot reflection, mirrored silhouette, wet sheen, floor glints or reflective pool
 Avoid: real-human/cosplay conversion of anime faces, plastic collectible look, flat pasted texture, stiff pose, visible light source, shiny floor, dense fog, text/logo/watermark/UI, extra character or scenery
 ```
