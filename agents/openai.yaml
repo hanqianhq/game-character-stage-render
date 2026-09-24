@@ -1,4 +1,4 @@
 interface:
   display_name: "Game Character Stage Render"
-  short_description: "Routes anime, concept-art and game references into semi-realistic 3D, asset reconstruction or Unreal Engine renders"
-  default_prompt: "Use $game-character-stage-render. First classify the reference as stylized/anime, concept art, or realistic game/3D reference; then choose the appropriate semi-realistic 3D, production-ready 3D asset reconstruction, or AAA Unreal Engine finish. Preserve identity, equipment and the requested composition."
+  short_description: "Routes character references into refined 3D stage renders with 60% framing, area lighting and grounded shadows"
+  default_prompt: "Use $game-character-stage-render. Classify the reference as stylized/anime, concept art, or realistic game/3D; choose the matching 3D finish while preserving identity and equipment. Unless the user specifies another size, frame the complete silhouette at about 60% of canvas height. Light it with invisible off-frame area lights, subtle diffuse ambient glow, selective contour separation, and soft contact plus cast shadows; keep the floor matte and non-reflective."
